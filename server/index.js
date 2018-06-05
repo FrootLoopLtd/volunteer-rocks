@@ -18,18 +18,17 @@ app.post('/organization', (req, res) => {
 //OPPORTUNITIES GET REQUEST
 app.get('/opportunities', (req, res) => {
 
-   console.log(req.session.id);
-   res.status(200).end();
-  // retrieveFromDb.getSession_Id(req.session.id, (sessionIdExist) => {
-  //   if(sessionIdExist) { retrieveFromDb.getOpportunities((data) => {res.status(200).json(data) });
-  //   } else {
-  //     res.status(204);
-  //   }
-  // });
+  retrieveFromDb.getSession_Id(req.session.id, (sessionIdExist) => {
+    if(sessionIdExist) { retrieveFromDb.getOpportunities((data) => { res.status(200).json(data) });
+    } else {
+      res.status(204);
+    }
+  });
+
 });
 
-// app.post('/signup', (req, res) => {
+app.post('/signup', (req, res) => {
 
-// });
+});
 
 module.exports = app;
