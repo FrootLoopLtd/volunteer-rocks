@@ -33,6 +33,14 @@ const getOpportunities = function(callback, limit) {
   }).limit(limit);
 };
 
+const getSession_Id = function(session_id, callback){
+  Organizations.count({session_id: session_id}, function(err, data) {
+    if(err) throw err;
+    data ? callback(true) : callback(false);
+  });
+}
+
 module.exports.getVolunteers = getVolunteers;
 module.exports.getOrganizations = getOrganizations;
 module.exports.getOpportunities = getOpportunities;
+module.exports.getSession_Id = getSession_Id;

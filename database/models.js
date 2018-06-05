@@ -28,11 +28,12 @@ var organizationSchema = mongoose.Schema({
   address:{
     street:String,
     city: String,
-    State: String,
-    zip_code: String,
+    state: String,
+    zipcode: String,
   },
   phone: String,
   email: String,
+  session_id: String,
   opList: [Schema.ObjectId]
 });
 

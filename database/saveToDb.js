@@ -19,6 +19,7 @@ const newOrganization = function(organization) {
     address: organization.address,
     phone: organization.phone,
     email: organization.email,
+    session_id: session_id,
     TODO: 'Insert opList'
   });
 };
@@ -34,6 +35,8 @@ const newOpportunity = function(opportunity) {
     phone: opportunity.phone,
     email: opportunity.email
   });
+
+
 };
 
 module.exports.newOpportunity = newOpportunity;
